@@ -22,15 +22,26 @@ function RootLayout({ children }) {
 
   return (
     <>
-      <div className="flex">
-        <Sidebar />
-        <div className="flex flex-col w-full">
-          <Navbar />
-          {open && <main className="flex-1 p-4">{children}</main>}
+      <div className="flex ">
+        <div className="sm:fixed w-fit">
+          <Sidebar />
+        </div>
+        <div className="flex flex-col w-full ">
+          <div
+            className="fixed sm:ml-[16rem] ml-12 sm:m-0 m-2 "
+            style={{
+              width: open ? "calc(100% - 16rem)" : "calc(100% - 4rem) ",
+            }}
+          >
+            <Navbar />
+          </div>
+          {open && (
+            <main className="flex-1 p-4 mt-10 ml-[16rem] ">{children}</main>
+          )}
         </div>
       </div>
       <div className="">
-        {!open && <main className="flex-1 p-4">{children}</main>}
+        {!open && <main className="flex-1 p-4 mt-10">{children}</main>}
       </div>
     </>
   );

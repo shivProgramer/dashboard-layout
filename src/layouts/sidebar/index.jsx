@@ -81,7 +81,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div>
+      <div className="sm:fixed ">
         <div
           onClick={() => setOpen(false)}
           className={`md:hidden fixed inset-0 max-h-screen z-[998] bg-black/50 ${
@@ -103,9 +103,9 @@ const Sidebar = () => {
               width={45}
               alt=""
             />
-            <span className="text-xl whitespace-pre font-semibold">
+            <span className="text-xl whitespace-pre font-bold">
               {" "}
-              CA - <span className="text-sky-800"> OMS </span>
+              CA - <span className="text-[#FFC400]"> OMS </span>
             </span>
           </div>
 
@@ -186,7 +186,10 @@ const Sidebar = () => {
             <IoIosArrowBack size={25} />
           </motion.div>
         </motion.div>
-        <div className="m-3 md:hidden  " onClick={() => setOpen(true)}>
+        <div
+          className="mt-4 mx-2 md:hidden fixed bg-[#9e4f4f] rounded-full p-1 "
+          onClick={() => setOpen(true)}
+        >
           <MdMenu size={25} />
         </div>
       </div>
