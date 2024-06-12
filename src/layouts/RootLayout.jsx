@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar/index";
 import Navbar from "./Navbar";
 import { useMediaQuery } from "react-responsive";
 import { useLocation } from "react-router-dom";
